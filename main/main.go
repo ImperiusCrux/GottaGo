@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/id/", calledIfIdUrl)
-	log.Fatalln(http.ListenAndServe(":8080", nil))
+	http.HandleFunc("/", calledIfIdUrl)
+	log.Fatalln(http.ListenAndServeTLS(":4443", "\\src\\certfile.pm", "src\\keyfile.pm", nil))
 }
 
 func dummyRoutine() {
